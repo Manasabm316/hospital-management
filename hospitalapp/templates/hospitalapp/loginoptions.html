@@ -1,0 +1,17 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Login options {% endblock %}
+
+{% block content %}
+
+<div>
+    <h3 style="font-family:redressed;color:rgb(52, 52, 87)">Login as Doctor</h3>
+    <button type="subit" class="btn btn-outline-dark"><a href="{% url 'doctorlogin' %}"><b>Doctor Login</b></a></button>        
+</div>
+<br>
+<div>
+    <h3 style="font-family:redressed;color:rgb(52, 52, 87)">Login as Patient</h3>
+    <button type="subit" class="btn btn-outline-dark"><a href="{% url 'patientlogin' %}"><b>Patient Login</b></a></button>        
+</div>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Doctor Register {% endblock %}
+
+{% block content %}
+
+
+<!-- <div class="float-left" style="margin-top:2%">
+    <h3 style="font-family:redressed">Doctor Registration</h3>
+</div> -->
+<center>
+<div style="margin-top:5%;width:50%;height:40%;border:2px solid rgb(99, 102, 102);background-color:whitesmoke">
+    <div style="border:1px solid rgb(196, 201, 201);background-color:rgb(175, 170, 170)">
+        <h2 style="font-family:redressed;color:rgb(52, 52, 87)"><b>Doctor Registration</b></h2>
+    </div>
+    <br>
+    {{form.errors}}
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="text"  class="form-control" placeholder="Enter doctor name" name="doctor_name" required> 
+        </div>  
+        <br> 
+        <div>
+            <input type="email" class="form-control" placeholder="Enter doctor email" name="email" required>
+        </div>
+        <br>
+        <div class="float-left">
+            <div class="inline-block">
+                <label style="font-family:redressed;color:rgb(102, 99, 99)">Specialization</label>
+                <select name="specialization" style="font-family:redressed">
+                    <option value="Aerospace Medicine">Aerospace Medicine</option>
+                    <option value="Anaesthesia">Anaesthesia</option>
+                    <option value="Bariatric Surgery">Bariatric Surgery</option>
+                    <option value="Cardiology - Non Interventional">Cardiology - Non Interventional</option>
+                    <option value="Cardiothoracic And Vascular Surgery">Cardiothoracic And Vascular Surgery</option>
+                    <option value="Dermatology And Cosmetology">Dermatology And Cosmetology</option>
+                    <option value="Endocrinology">Endocrinology</option>
+                    <option value="General Surgery">General Surgery</option>
+                    <option value="In-Vitro Fertilisation (IVF)">In-Vitro Fertilisation (IVF)</option>
+                    <option value="Laboratory Medicine">Laboratory Medicine</option>
+                    <option value="Medical Gastroenterology">Medical Gastroenterology</option>
+                    <option value="Nephrology">Nephrology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Orthopedics & Joint Replacement">Orthopedics & Joint Replacement</option>
+                    <option value="Physiotherapy">Physiotherapy</option>
+                    <option value="Plastic Surgery">Plastic Surgery</option>
+                    <option value="Psychiatry">Psychiatry</option>
+                    <option value="Surgical Gastroenterology">Surgical Gastroenterology</option>
+                    <option value="Surgical Oncology">Surgical Oncology</option>
+                    <option value="Urology">Urology</option>    
+                </select>
+              </div> 
+            </div>
+        <br><br>
+        <div>
+            <input type="password" id=pwd class="form-control" placeholder="Enter password" name="password" required>
+        </div>
+        <br> 
+        <br>
+        <!-- <div>
+            <input type="date" id=date class="form-control" name="date" required>
+        </div> -->
+        <br>
+        <div class="inline-block">
+            <label>Gender</label>
+            <input type="radio" name="gender" required><label>Male</label>
+            <input type="radio" name="gender" required><label>Female</label>
+            <input type="radio" name="gender" required><label>Others</label><br><br>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary"><b>Register</b></button>        
+        </div>
+        <!-- <div style="margin-left:50%;margin-top:4%;margin-bottom:4%">
+        <label>Already have an account?<a href="{% url 'doctorlogin' %}"> Login</a></label>
+        </div> -->
+</form> 
+</div>
+</center>
+
+
+
+{% endblock %}

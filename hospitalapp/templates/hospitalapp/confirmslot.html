@@ -1,0 +1,84 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Slot Conformation {% endblock %}
+
+{% block content %}
+<div>
+    <h3 style="font-family:redressed;color:rgb(52, 52, 87);margin-top:2%"><b>Enter required details in the below form to book a slot</b></h3>
+    </div>
+    
+    <center>
+    <div style="margin-top:3%;width:50%;height:40%;border:2px solid rgb(196, 201, 201);background-color:whitesmoke">
+        <center>
+            <div style="background-color:rgb(175, 170, 170)">
+                <h2 style="font-family:redressed;color:rgb(52, 52, 87)">Slot confirmation</h2>
+            </div>
+            </center>
+        {{form.errors}}
+        <form method="POST">
+            {% csrf_token %}
+            <br>
+            <div>
+                <input type="text" id=fname class="form-control" placeholder="Enter Patient Name" name="slotpatient_name" required>
+            </div>  
+            <br>
+            <div>
+                <input type="text" id=disease class="form-control" placeholder="Enter patient symptoms" name="patientsymptoms" required>
+            </div>
+            <br>
+            <div class="float-left">
+                <div class="inline-block">
+                    <label style="font-family:redressed">Select Doctor</label>
+                    <select name="slotspecialization" style="font-family:redressed">
+                        <!-- {% for name in Specialization %}
+                        <option>{{name.specialization_list}}</option>
+                        {% endfor %} -->
+                        <option value="Dr.Ashok,Aerospace Medicine">Dr.Ashok,Aerospace Medicine</option>
+                        <option value="Dr.Abhishek,Anaesthesia">Dr.Abhishek,Anaesthesia</option>
+                        <option value="Dr.Sheela,Bariatric Surgery">Dr.Sheela,Bariatric Surgery</option>
+                        <option value="Dr.Keerthi,Cardiology - Non Interventional">Dr.Keerthi,Cardiology - Non Interventional</option>
+                        <option value="Dr.Lila,Cardiothoracic And Vascular Surgery">Dr.Lila,Cardiothoracic And Vascular Surgery</option>
+                        <option value="Dr.Pande,Dermatology And Cosmetology">Dr.Pande,Dermatology And Cosmetology</option>
+                        <option value="Dr.Ashwin,Endocrinology">Dr.Ashwin,Endocrinology</option>
+                        <option value="Dr.Roopa,General Surgery">Dr.Roopa,General</option>
+                        <option value="Dr.Josh,In-Vitro Fertilisation (IVF))">Dr.Josh,In-Vitro Fertilisation (IVF)</option>
+                        <option value="Dr.Dhruva,Laboratory Medicine">Dr.Dhruva,Laboratory Medicine</option>
+                        <option value="Dr.Poornima,Medical Gastroenterology">Dr.Aoornima,Medical Gastroenterology</option>
+                        <option value="Dr.Seetha,Nephrology">Dr.Seetha,Nephrology</option>
+                        <option value="Dr.Fathima,Neurology">Dr.Fathima,Neurology</option>
+                        <option value="D.Kiran,Orthopedics & Joint Replacement">D.Kiran,Orthopedics & Joint Replacement</option>
+                        <option value="Dr.Bhima,Physiotherapy">Dr.Bhima,Physiotherapy</option>
+                        <option value="Dr.Indresh,Plastic Surgery">Dr.Indresh,Plastic Surgery</option>
+                        <option value="Dr.Harish,Psychiatry">Dr.Harish,Psychiatry</option>
+                        <option value="Dr.Soorya,Surgical Gastroenterology">Dr.soorya,Surgical Gastroenterology</option>
+                        <option value="Dr.Disha,Surgical Oncology">Dr.Disha,Surgical Oncology</option>
+                        <option value="Dr.Carren,Urology">Dr.Carren,Urology</option>    
+                    </select>
+                  </div> 
+                </div>
+            <!-- <div>
+                <input type="text" class="form-control" placeholder="Enter Room ID" name="slotroom_id" required>
+            </div> -->
+            <br>
+            <div> 
+                <label>Select Date</label>
+                <input type="date" id=date class="form-control" name="slotdate" required>
+            </div>
+        <br><br>
+        <div class="float-left">
+            <div class="inline-block">
+                <label>Gender</label>
+                <input type="radio" id=gender name="slotgender" required><label>Male</label>
+                <input type="radio" id=gender name="slotgender" required><label>Female</label>
+                <input type="radio" id=gender name="slotgender" required><label>Others</label><br><br>
+            </div>
+        </div>
+            <div>
+                <button type="submit" class="btn btn-primary"><b>Confirm Slot</b></button>        
+            </div>
+            <br>
+    </div>
+    </form>
+    </center>
+
+{% endblock %}

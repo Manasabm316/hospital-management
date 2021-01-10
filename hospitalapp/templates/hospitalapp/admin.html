@@ -1,0 +1,22 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Admin  {% endblock %}
+
+{% block content %}
+
+<div style="margin-right:5%">
+    <h2 style="color:rgb(52, 52, 87);font-family:redressed"><b>You are in Admin Site!</b></h2>
+    <img src="static/images/doctors.jpg" class="float-right" style="width:50%;height:50%">
+    <br>
+    <div class="inline-block">
+        <h3 style="font-family:redressed;color:rgb(52, 52, 87)">Register Doctor here</h3>
+        <button type="subit" class="btn btn-outline-dark"><a href="{% url 'doc_registration' %}"><b>Register</b></a></button>        
+    </div>
+    <br>
+    <div class="inline-block">
+        <h3 style="font-family:redressed;color:rgb(52, 52, 87)">View slot requests here</h3>
+        <button type="submit" class="btn btn-outline-dark"><a href="#"><b>Slot Request</b></a></button>        
+    </div>
+</div>
+
+{% endblock %}

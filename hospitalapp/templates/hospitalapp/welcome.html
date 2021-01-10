@@ -1,0 +1,21 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Welcome {% endblock %}
+
+{% block content %}
+<div style="margin-right:5%">
+    <img src="static/images/doctors.jpg" class="float-right" style="width:50%;height:50%">
+
+    <h1 style="margin-top:3%;font-family:redressed;color:rgb(52, 52, 87)"><b>Welcome to People's Hospital</b></h1>
+        
+    <blockquote class="blockquote" style="margin-top:3%;width:45%;border:1px solid rgb(207, 202, 202)">
+        <p style="margin-top:5%;color:rgb(39, 37, 37)">"The good physician treats the disease; The great physician treats the patient who has the disease"</p>
+        <p class="blockquote-footer">WILLIAM OSLER </p>
+    </blockquote>
+    
+    <div style="margin-top:3%">
+        <h2 style="font-family:redressed;color:rgb(52, 52, 87)">Register to book your first appointment!</h2>
+        <button type="button"><a href="{% url 'register' %}"><b>Click here</b></a></button>
+    </div>
+</div>
+{% endblock %}

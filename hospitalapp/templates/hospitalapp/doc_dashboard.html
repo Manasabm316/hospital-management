@@ -1,0 +1,20 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Dashboard {% endblock %}
+
+{% block content %}
+
+<div class="float-right">
+    {% for message in messages %}
+        <div class="alert alert-success">
+            <strong>{{message}}</strong> 
+          </div>
+        {% endfor %}
+</div>
+<h2 style="color:rgb(52, 52, 87)"><b>Hello, Dr.{{user.username}}!</b></h2>
+<div style="margin-top:2%">
+    <h2 style="font-family:redressed;color:rgb(52, 52, 87)">View Patient requests here</h2>
+    <button type="submit" class="btn btn-outline-dark"><a href="{% url 'doc_requests' %}"><b>Requests</b></a></button>
+</div>
+
+{% endblock %}

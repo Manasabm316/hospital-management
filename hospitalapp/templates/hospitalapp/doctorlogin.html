@@ -1,0 +1,49 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Doctor Login {% endblock %}
+
+{% block content %}
+
+
+
+<center>
+    <div style="margin-top:5%;width:50%;height:50%;border:2px solid rgb(196, 201, 201);background-color:whitesmoke">
+        
+        <div style="border:1px solid rgb(196, 201, 201);background-color:rgb(175, 170, 170)">
+            <h2 style="font-family:redressed;color:rgb(52, 52, 87)">Doctor Login</h2>
+        </div>
+        {{form.errors}}
+
+        <form method="POST" action="{% url 'doctorlogin' %}">
+            {% csrf_token %}
+            <!-- <div>
+                <input type="text" class="form-control" placeholder="Enter user ID" name="id" required>
+            </div>   -->
+            <br>
+            <div>
+                <input type="text"  class="form-control" placeholder="Enter username" name="doctor_name" required>
+            </div>  
+            <br> 
+            <div>
+                <input type="password" class="form-control" placeholder="Enter password" name="password" required>
+            </div>
+            <br>
+            {% for message in messages %}
+            <div class="alert alert-danger">
+                <strong>{{message}}</strong> 
+            </div>
+            {% endfor %}
+            <!-- <div>
+                {% for message in messages %}
+                    <p id='messages' style = "color:brown">{{message}}</p>
+                {% endfor %}
+            </div>    -->
+            <br> 
+            <div>
+                <button type="submit" class="btn btn-primary"><b>Login</b></button>        
+            </div>
+            <br>
+        </form>
+    </div>
+</center>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'adminapp/base.html' %}
+
+{% block title %}{{block.super}} | Admin {% endblock %}
+
+{% block content %}
+<div style="margin-right:5%">
+    <img src="static/images/doctors.jpg" class="float-right" style="width:50%;height:50%">
+
+    <h1 style="margin-top:3%;font-family:redressed;color:rgb(52, 52, 87)"><b>Welcome to People's Hospital</b></h1>
+    <br>
+    <h2 style="color:rgb(52, 52, 87);font-family:redressed"><b>You are in Admin Site!</b></h2>
+    <blockquote class="blockquote" style="margin-top:3%;width:45%;border:1px solid rgb(207, 202, 202)">
+        <p style="margin-top:5%;color:rgb(39, 37, 37)">"The good physician treats the disease; The great physician treats the patient who has the disease"</p>
+        <p class="blockquote-footer">WILLIAM OSLER </p>
+    </blockquote>
+<br>
+<br>
+<div class="inline-block">
+    <h3 style="font-family:redressed;color:rgb(52, 52, 87)">Register Doctor here</h3>
+    <button type="subit" class="btn btn-outline-dark"><a href="{% url 'doc_registration' %}"><b>Register</b></a></button>        
+</div>
+<br>
+<div class="inline-block">
+    <h3 style="font-family:redressed;color:rgb(52, 52, 87)">View slot requests here</h3>
+    <button type="submit" class="btn btn-outline-dark"><a href="#"><b>Slot Request</b></a></button>        
+</div>
+
+</div>
+{% endblock %}

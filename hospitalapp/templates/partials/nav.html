@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="static/images/hospital-logo.jpg" alt="logo" style="width:10%">
+    </a>
+	<div>
+        {% if request.user.is_authenticated %}
+		<ul class="navbar-nav" >
+			<li class="navbar-item"><a class="nav-link" href="{% url 'welcome' %}">Home</a></li>
+			<li class="navbar-item"><a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a></li>
+			<li class="navbar-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="navbar-item"><a class="nav-link" href="#">About</a></li>
+            <li class="navbar-item"><a class="nav-link" href="logout">Logout</a></li>
+        </ul>
+        {% else %}
+		<ul class="navbar-nav">
+            <li class="navbar-item"><a class="nav-link" href="{% url 'welcome' %}">Home</a></li>
+            <li class="navbar-item"><a class="nav-link" href="{% url 'loginoptions' %}">Login</a></li>
+            <!-- <li class="nav-item dropdown"> -->
+                <!-- <a class="nav-link dropdown-toggle" href="{% url 'loginoptions' %}" id="navbardrop" data-toggle="dropdown"> -->
+                  <!-- Login -->
+                </a>
+                <!-- <div class="dropdown-menu">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="#">As Doctor</a>
+                        <a class="dropdown-item" href="#">As Patient</a>
+                    </div>
+                </div> -->
+            <!-- </li> -->
+			<li class="navbar-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+			<li class="navbar-item"><a class="nav-link" href="#">Contact</a></li>
+			<li class="navbar-item"><a class="nav-link" href="#">About</a></li>
+		</ul>
+		{% endif %}
+	</div>
+</nav>

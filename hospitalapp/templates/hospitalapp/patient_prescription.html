@@ -1,0 +1,40 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Patient Prescription {% endblock %}
+
+{% block content %}
+
+    
+<div style="margin-top:5%;width:50%;height:50%;border:2px solid rgb(196, 201, 201);background-color:whitesmoke">
+    <div style="border:1px solid rgb(196, 201, 201);background-color:rgb(175, 170, 170)">
+        <h2 style="font-family:redressed;color:rgb(52, 52, 87)">Prescription</h2>
+    </div>
+    <br>
+
+    {% if Prescription %} 
+
+    {% for field in Prescription %}
+
+    <div class="float-left">
+        <label style="font-size:large;font-family:redressed;color:rgb(52, 52, 87)"><b>Patient Name:</b> {{field.patientname}}</label>
+    </div>
+    <br><br>
+    <div class="float-left">
+        <label style="font-size:large;font-family:redressed;color:rgb(52, 52, 87)"><b>Patient Symptoms:</b> {{field.patientsymptom}}</label>
+    </div>
+    <br><br>
+    <div class="float-left">
+        <label style="font-size:large;font-family:redressed;color:rgb(52, 52, 87)"><b>Prescription:</b> {{field.doc_prescription}}</label>
+    </div>     
+    <br><br>
+
+    {% endfor %}  
+
+    {% else %}
+    <h4 style="font-size:large;font-family:redressed;color:rgb(52, 52, 87)">Sorry, no prescription available</h4>
+    {% endif %} 
+
+</div>
+
+
+{% endblock %}

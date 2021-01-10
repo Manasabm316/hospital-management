@@ -1,0 +1,25 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Dashboard {% endblock %}
+
+{% block content %}
+
+
+<h2 style="color:rgb(52, 52, 87);font-family:redressed"><b>Hello, {{user.username}}!</b></h2>
+
+<div class="inline-block" style="margin-top:2%">
+    <h2 style="font-family:redressed;color:rgb(52, 52, 87)">Book your appointment here!</h2>
+    <button type="submit"><a href="{% url 'slotbooking' %}"><b>Online Booking</b></a></button>
+</div>
+
+<div class="inline-block" style="margin-top:2%">
+    <h2 style="font-family:redressed;color:rgb(52, 52, 87)">View your prescription here!</h2>
+    <button type="submit"><a href="{% url 'patient_prescription' %}"><b>Prescription</b></a></button>
+    
+{% for message in messages %}
+        <div class="alert alert-success">
+            <strong>{{message}}</strong> 
+          </div>
+        {% endfor %}
+
+{% endblock %}

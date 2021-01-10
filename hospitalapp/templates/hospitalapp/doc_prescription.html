@@ -1,0 +1,33 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Prescription {% endblock %}
+
+{% block content %}
+
+<center>
+<div style="margin-top:5%;width:50%;height:40%;border:2px solid rgb(196, 201, 201);background-color:whitesmoke">
+        <div style="background-color:rgb(175, 170, 170)">
+            <h2 style="font-family:redressed;color:rgb(52, 52, 87)">Patient Prescription</h2>
+        </div>
+        <br>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="text" class="form-control" placeholder="Add patient name" name="patientname" required> 
+        </div>  
+        <br>
+        <div>
+            <input type="text" class="form-control" placeholder="Add patient symptom" name="patientsymptom" required> 
+        </div> 
+        <br> 
+        <div>
+            <input type="text" class="form-control" placeholder="Add prescription" name="prescription" required> 
+        </div>  
+        <br>
+        <div>
+            <button type="submit" class="btn btn-primary"><b>Send</b></button>        
+        </div>\
+    </form>
+</div>
+</center>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block title %}{{block.super}} | Register {% endblock %}
+
+{% block content %}
+
+
+<center>
+<div style="margin-top:5%;width:50%;height:40%;border:2px solid rgb(196, 201, 201);background-color:whitesmoke">
+<h1 align="center" style="font-family:redressed;color:rgb(52, 52, 87)">Register</h1><br>  
+    {{form.errors}}
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="text" id=uname class="form-control" placeholder="Enter your username" name="username" required> 
+        </div>  
+        <br>
+        <div>
+            <input type="email" id=email class="form-control" placeholder="Enter your email-id" name="email" required>
+        </div>
+        <br>
+        <div>
+            <input type="password" id=pwd class="form-control" placeholder="Enter your password" name="password1" required>
+        </div>
+        <br>
+        <div>
+            <input type="password" id=pwd class="form-control" placeholder="Confirm Password" name="password2" required>
+        </div>
+        <br>
+        <div>
+            <input type="text" class="form-control" placeholder="Enter your age" name="age" requred>
+        </div>
+        <br>
+        <div>
+            <input type="date" id=date class="form-control" name="date" required>
+        </div>
+        <br>
+        <div class="inline-block">
+            <label>Gender</label>
+            <input type="radio" id=gender name=gender required><label>Male</label>
+            <input type="radio" id=gender name=gender required><label>Female</label>
+            <input type="radio" id=gender name=gender required><label>Others</label><br><br>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary"><b>submit</b></button>        
+        </div>
+        <div style="margin-left:50%;margin-top:4%;margin-bottom:4%">
+        <label>Already have an account?<a href="{% url 'patientlogin' %}"> Login</a></label>
+</form> 
+</div>
+</center>
+
+
+
+{% endblock %}
